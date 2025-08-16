@@ -1,0 +1,9 @@
+[build]
+  command = "npm ci && npm run generate"
+  publish = ".output/public"
+
+# Jeśli używasz routera po stronie klienta (SPA lub brak prerenderu)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

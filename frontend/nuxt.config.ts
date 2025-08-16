@@ -6,4 +6,12 @@ export default defineNuxtConfig({
 	modules: ['@nuxt/ui', '@pinia/nuxt'],
 	css: ['~/assets/css/main.css'],
 	devtools: { enabled: true },
+	runtimeConfig: {
+		public: {
+			apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:4000/api',
+		},
+	},
+	// Jeśli robisz statyczny frontend:
+	// ssr: false, // opcjonalnie (SPA)
+	nitro: { prerender: { routes: [] } },
 })
